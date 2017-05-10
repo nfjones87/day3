@@ -50,8 +50,25 @@ for (i=0;i<array.length;i++) {
 
 -------------------------------------
 
+let array = [
 
+{name: "Nick", job: "developer"},
 
+{name: "Bob", job: "writer", boss: "Nick"},
+
+{name: "carl", job: "cook", boss: "Nick"}
+
+];
+
+for (i=0;i<array.length;i++) {
+	let employer = array[i]
+	if (employer.boss === undefined) {
+		console.log(employer.job + " " + employer.name + " doesn't report to anybody.");
+	};
+	else if {
+	console.log(employer.job + " " + employer.name + " reports to " + employer.boss);
+};
+}
 
 
 
