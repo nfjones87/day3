@@ -103,6 +103,69 @@ decode("craft block argon meter bells brown croon droop");
 
 --------------------------------------------------------------------
 
+function createCharacter (name, nickname, race, origin, attack, defense) {
+
+	return {
+	 name, nickname, race, origin, attack, defense,
+
+	 describe () {
+	 	console.log(`${name} is a ${race} from ${origin}`);
+	 },
+
+	  describe2 () {
+	 	console.log(`${name} is a Hobbit`);
+	 },
+
+	  describe3 () {
+	 	console.log(`${name} has high attack`);
+	 },
+	 
+	 evaluateFight(character) {
+	 	let dmgDealt = 0, dmgReceived = 0;
+
+	 	if(this.attack > character.def) {
+	 		dmgDealt = this.attack - character.def
+	 	}
+
+	 	if(this.def < character.atk) {
+	 		dmgReceived = character.atk - this.def;
+	 	}
+
+	 	console.log(`Your opponent takes ${dmgDealt} damage and you receive ${dmgReceived} damage.`);
+
+
+		 }
+
+	};
+}
+
+const characters = [
+  createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6),
+  createCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
+  createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
+  createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunedain', 6, 8),
+  createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5)
+];
+
+characters.push(createCharacter('Arwen U', 'Arwen', 'Half-Elf', 'Rivendell', 15, 20));
+
+characters.find(function(hero){
+	if(hero.nickname ==='aragorn'){
+		hero.describe();
+	}
+});
+
+	const onlyHobbits = characters.filter(function(char){
+		if(char.race === 'Hobbit') {
+			char.describe2();
+		}
+	});
+	const onlyHighAttack = characters.filter(function(char){
+		if(char.attack > 5) {
+			char.describe3();
+		}
+	});
+
 
 
 
