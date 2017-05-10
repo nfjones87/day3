@@ -123,12 +123,12 @@ function createCharacter (name, nickname, race, origin, attack, defense) {
 	 evaluateFight(character) {
 	 	let dmgDealt = 0, dmgReceived = 0;
 
-	 	if(this.attack > character.def) {
-	 		dmgDealt = this.attack - character.def
+	 	if(this.attack > character.defense) {
+	 		dmgDealt = this.attack - character.defense
 	 	}
 
-	 	if(this.def < character.atk) {
-	 		dmgReceived = character.atk - this.def;
+	 	if(this.defense < character.attack) {
+	 		dmgReceived = character.attack - this.defense;
 	 	}
 
 	 	console.log(`Your opponent takes ${dmgDealt} damage and you receive ${dmgReceived} damage.`);
@@ -138,6 +138,8 @@ function createCharacter (name, nickname, race, origin, attack, defense) {
 
 	};
 }
+
+// I just copy/pasted the below array block
 
 const characters = [
   createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6),
