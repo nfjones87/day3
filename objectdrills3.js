@@ -70,6 +70,39 @@ for (i=0;i<array.length;i++) {
 };
 }
 
+--------------------------------------------------------------
+
+function decode(words){
+    const cipher = {
+        a: 2,
+        b: 3,
+        c: 4,
+        d: 5  
+    };
+    
+    const wordsArray = words.split(' ');
+    const decodedChars = wordsArray.map(word => {
+        let offset;
+        if (cipher[word[0]]){
+     offset = cipher[word[0]] - 1;
+ }
+
+        //return offset ? word[offset] : ' ';
+    if (offset !== undefined){
+            return word[offset];
+        } else {
+            return ' ';
+        }
+    }
+    });
+    
+    return decodedChars.join('');
+}
+
+decode("craft block argon meter bells brown croon droop");
+
+--------------------------------------------------------------------
+
 
 
 
